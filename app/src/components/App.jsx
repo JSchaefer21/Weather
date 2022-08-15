@@ -9,6 +9,7 @@ import '../styles/App.sass'
 function App() {
 
   const [weather, setWeather] = useState(null)
+  const [location, setLocation] = useState(null)
   const [map, setMap] = useState(false)
 
   const handleCitySelected = async(city) => {
@@ -24,20 +25,21 @@ function App() {
 
   const handleFormSubmit = async(event) => {
     event.preventDefault()
-    const result = await retrieveWeather(event.target.city.value, null, null)
-    setWeather(result)
+    setWeather(await retrieveWeather(event.target.city.value, null, null))
   }
   
   const handleLocation = async() => {
     navigator.geolocation.getCurrentPosition(function(position) {
-      /* 
-      ojo con la asincronia, pendiente repasar o ejecutar por sepaarado
-      
-      const result = await retrieveWeather(null, position.coords.latitude, position.coords.longitude)
-      setWeather(result) */
+      setLocation([position.coords.latitude, position.coords.longitude])
+      debugger
+      handleNewLocation()
     }, function(error){
       console.log('Position error')
     }, { maximumAge: 400_000 })
+  }
+
+  const handleNewLocation = async() => {
+    setWeather(await retrieveWeather(null, location[0], location[1]))
   }
 
   return (
@@ -61,8 +63,8 @@ function App() {
 
 
       <button className={map?'map-button map-show':'map-button map-hide'} onClick={handleMap}>{map? 'Hide map' : 'Show map'}</button>
-      { map && <footer>
-        { weather && <Map position={[weather.coord.lat,weather.coord.lon]}/>}
+      { map && weather && <footer>
+        <Map position={[weather.coord.lat,weather.coord.lon]}/>
       </footer> }
 
     </div>
