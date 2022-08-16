@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react'
 import retrieveWeather from '../logic/retrieveWeather'
+import retrieveAltitude from '../logic/retrieveAltitude'
 import Box from './Box'
 import WeatherData from './WeatherData'
 import Map from './Map'
@@ -33,6 +34,7 @@ function App() {
   const handleFormSubmit = async(event) => {
     event.preventDefault()
     setWeather(await retrieveWeather(event.target.city.value, null, null))
+    setAltitude(await retrieveAltitude(weather.cord.lat, weather.cord.lon))
   }
   
   const handleLocation = async() => {
@@ -44,6 +46,7 @@ function App() {
   }
   const handleNewLocation = async(lat, lon) => {
     setWeather(await retrieveWeather(null, lat, lon))
+    setAltitude(await retrieveAltitude(lat, lon))
   }
 
   return (
