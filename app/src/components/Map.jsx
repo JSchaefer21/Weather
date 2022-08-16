@@ -8,10 +8,10 @@ function Map({position}) {
                 center={position} 
                 zoom={12} 
                 zoomControl={false}
-                /* scrollWheelZoom={false} */
+                scrollWheelZoom={true}
                 attributionControl={false}
-                doubleClickZoom={false}
-                dragging={false}
+                doubleClickZoom={true}
+                dragging={true}
                 > 
 
                 <ChangeMapView position={position} />

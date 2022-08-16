@@ -15,7 +15,7 @@ function Box(props) {
         <p> Please allow location or search for city </p>
 
         <form className='Box__form' onSubmit={handleFormSubmit}>
-          <input type="text" name="city" placeholder=" City"/>
+          <input type="text" name="city" placeholder="City"/>
           <button className='Box__button'>Search</button>
         </form>
       </main>
