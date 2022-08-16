@@ -10,6 +10,7 @@ import '../styles/App.sass'
 function App() {
 
   const [weather, setWeather] = useState(null)
+  const [altitude, setAltitude] = useState(null)
   const [map, setMap] = useState(false)
 
   useEffect(() => {
@@ -67,8 +68,9 @@ function App() {
 
       <button className={map?'map-button map-show':'map-button map-hide'} onClick={handleMap}>{map? 'Hide map' : 'Show map'}</button>
       { map && weather && <footer>
-        <Map position={[weather.coord.lat,weather.coord.lon]}/>
+        <Map position={[weather.coord.lat,weather.coord.lon]} onNewLocation={handleNewLocation}/>
         <div className='Footer__location'>
+          {altitude && <p className='Footer-text'>Altitude: {altitude}m</p> }
           <p className='Footer-text'>Latitude: {weather.coord.lat}</p>
           <p className='Footer-text'>Longitude: {weather.coord.lon}</p>
         </div>
