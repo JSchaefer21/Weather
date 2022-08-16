@@ -49,11 +49,11 @@ function App() {
       
       <header>
         <form className='Header__form' onSubmit={handleFormSubmit}>
-          <input type="text" name="city" placeholder=" City"/>
-          <button className='Header__form-button'>Search</button>
+          <input className='Header__form-input' type="text" name="city" placeholder="City"/>
+          <button className='Header__button'>Search</button>
         </form>
 
-        <button className='Header__location-button' onClick={handleLocation}>Set Location</button>
+        <button className='Header__button Header__location' onClick={handleLocation}>Set Location</button>
       </header>
 
 

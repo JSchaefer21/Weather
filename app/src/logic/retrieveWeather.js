@@ -27,6 +27,8 @@ else if (city===null && latitude && longitude) {
     .then(res => {
       if(res.status === 200){
           const data = res.data
+          data.sys.sunrise = new Date(data.sys.sunrise*1000)
+          data.sys.sunset = new Date(data.sys.sunset*1000)
           return data
       }
     })

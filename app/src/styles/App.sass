@@ -1,6 +1,8 @@
+@use 'base'
+
 .App
     width: 100%
-    height: 100vh
+    height: 100%
     background-color: #d3e1fb
 
 header
@@ -13,6 +15,35 @@ header
     background-color: #a3b3d0
     gap: 0.5rem
 
+.Header__form
+    display: flex
+    flex-direction: row
+    gap: 0.5rem
+
+.Header__form-input
+    -webkit-appearance: none  
+    margin: 0
+    padding: 0px 5px
+    width: 100px
+    border: none
+    border-radius: 2px
+
+.Header__button
+    -webkit-appearance: none
+    margin: 0
+    padding: 0
+    padding: 3px 8px
+    border: none
+    border-radius: 3px
+    font-size: 16px
+    font-weight: 400
+    background-color: #536e7c
+    color: white
+
+.Header__location
+    background-color: #60886d
+
+
 main
     display: flex
     flex-direction: column
@@ -21,7 +52,7 @@ main
     width: 100%
     overflow: auto
 .main-reduced    
-    height: calc(100% - 2.5rem - 15rem - 1px)
+    height: calc(100% - 2.5rem - base.$map-height - 1px)
 .main-complete    
     height: calc(100% - 2.5rem)
 
@@ -35,21 +66,22 @@ main
     border: 1px solid #7391c9
     font-size: 12px
     padding: 0.4rem
+    margin: 0
     border-top-right-radius: 6px
 .map-show
-    bottom: 15rem 
+    bottom: base.$map-height
     animation: show 0.4s linear
 @keyframes show
     0% 
         bottom: 0rem
     100%
-        bottom: 15rem
+        bottom: base.$map-height
 .map-hide
     bottom: 0
     animation: hide 0.15s linear
 @keyframes hide
     0% 
-        bottom: 15rem
+        bottom: base.$map-height
     100%
         bottom: 0rem
 
@@ -60,10 +92,10 @@ footer
     bottom: 0
     border-top: 1px solid #7391c9
     width: 100%
-    height: 15rem
+    height: base.$map-height
 @keyframes showmap
     0% 
-        bottom: -15rem
+        bottom: - base.$map-height
     100%
         bottom: 0rem
 
