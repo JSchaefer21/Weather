@@ -73,7 +73,7 @@ function App() {
       { map && weather && <footer>
         <Map position={[weather.coord.lat,weather.coord.lon]} onNewLocation={handleNewLocation}/>
         <div className='Footer__location'>
-          {altitude && <p className='Footer-text'>Altitude: {altitude}m</p> }
+          {altitude!=null && <p className='Footer-text'>Altitude: {altitude}m</p> }
           <p className='Footer-text'>Latitude: {weather.coord.lat}</p>
           <p className='Footer-text'>Longitude: {weather.coord.lon}</p>
         </div>

@@ -9,8 +9,8 @@ return axios
   .get(`https://api.open-elevation.com/api/v1/lookup?locations=${latitude},${longitude}`)
   .then(res => {
     if(res.status === 200){
-        const altitude = res.data.results[0].elevation;
-        return altitude;
+        let altitude = res.data.results[0].elevation
+        return altitude
     }
   })
   .catch(error => {
