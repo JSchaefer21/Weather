@@ -20,7 +20,7 @@ function App(props) {
           <p className='weather-name'>{weather.name}</p>
 {/*           <div className='Weather__header-des'> */}
             <img className='image' src={'http://openweathermap.org/img/wn/'+weather.weather[0].icon+'@2x.png'} alt=''/>
-{/*             <p className='weather-data-info2'>{weather.weather[0].description}</p>
+{/*             <p className='weather-data-info'>{weather.weather[0].description}</p>
           </div> */}
         </div>
         
