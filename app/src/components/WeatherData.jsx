@@ -20,7 +20,7 @@ function App(props) {
         <p className='weather-day'>{weather.sys.sunrise.toLocaleDateString()}</p>
         <div className='Weather__header'>
           <p className='weather-name'>{weather.name}</p>
-            <img className='image' src={'http://openweathermap.org/img/wn/'+weather.weather[0].icon+'@2x.png'} alt=''/>
+            <img className='image' src={'https://openweathermap.org/img/wn/'+weather.weather[0].icon+'@2x.png'} alt=''/>
         </div>
         
         <div className='Weather__temp'>
