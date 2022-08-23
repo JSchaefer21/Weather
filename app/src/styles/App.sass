@@ -3,16 +3,23 @@
 .App
     width: 100%
     height: 100%
-    background-color: #f3f5f3
+    background-image: url('../../public/weather.jpg')
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    display: flex
+    flex-direction: column
+    align-items: center
+
 
 header
     width: 100%
-    height: 2.5rem
+    height: 3rem
     display: flex
     flex-direction: row
     align-items: center
     justify-content: center
-    background-color: #a6b5ad
+    background-color: #1f3149e0
     gap: 0.5rem
 
 .Header__form
@@ -37,11 +44,11 @@ header
     border-radius: 3px
     font-size: 16px
     font-weight: 400
-    background-color: #536e7c
     color: white
+    background-color: #608f97
 
 .Header__location
-    background-color: #60886d
+    background-color: #4486a7
 
 
 main
@@ -62,11 +69,11 @@ main
     cursor: pointer
     left: 0
     -webkit-appearance: none
-    background: #b3c3ba
-    font-size: 12px
+    background: #4486a7
+    font-size: 14px
     font-weight: 500
-    color: #515f58
-    border: 1px solid #828e88
+    color: #e4e7f5
+    border: 1px solid #163e52
     padding: 0.4rem
     margin: 0
     border-top-right-radius: 6px
@@ -92,7 +99,7 @@ footer
     position: absolute
     animation: showmap 0.4s linear
     bottom: 0
-    border-top: 1px solid #828e88
+    border-top: 1px solid #163e52
     width: 100%
     height: base.$map-height
 @keyframes showmap
@@ -106,8 +113,8 @@ footer
     z-index: 999
     bottom: 1rem
     left: 1rem
-    background-color: #b3c3ba 
-    border: 1px solid #828e88
+    background-color: #abbbc0 
+    border: 1px solid #163e52
     padding: 0.5rem
     border-radius: 3px
     display: flex
@@ -116,10 +123,16 @@ footer
 .Footer-text
     font-size: 11px
     font-weight: 500
-    color: #515f58
+    color: #163e52
 
 .App__title   
     font-size: 18px
     padding: 1rem 0 1rem 0
     margin: 0
 
+
+@media only screen and (min-width: 550px)
+    header
+        width: 360px
+        border-bottom-left-radius: 3px
+        border-bottom-right-radius: 3px

@@ -35,11 +35,11 @@ function App(props) {
         <div className='Weather__suntime-container'>
           <div className='Weather__suntime'>
             <img className='image-sun' src={sunrise} alt=''/>
-            <p>{weather.sys.sunrise.toLocaleTimeString()}</p>
+            <p className='weather-data-info2'>{weather.sys.sunrise.toLocaleTimeString()}</p>
           </div>
           <div className='Weather__suntime'>
             <img className='image-sun' src={sunset} alt=''/>
-            <p>{weather.sys.sunset.toLocaleTimeString()}</p>
+            <p className='weather-data-info2'>{weather.sys.sunset.toLocaleTimeString()}</p>
           </div>
         </div>
 
