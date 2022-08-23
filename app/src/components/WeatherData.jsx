@@ -16,12 +16,10 @@ function App(props) {
     <div className='Weather'>
       
       {weather &&  <div className='Weather__container'>
+        <p className='weather-day'>{weather.sys.sunrise.toLocaleDateString()}</p>
         <div className='Weather__header'>
           <p className='weather-name'>{weather.name}</p>
-{/*           <div className='Weather__header-des'> */}
             <img className='image' src={'http://openweathermap.org/img/wn/'+weather.weather[0].icon+'@2x.png'} alt=''/>
-{/*             <p className='weather-data-info'>{weather.weather[0].description}</p>
-          </div> */}
         </div>
         
         <div className='Weather__temp'>
@@ -32,21 +30,22 @@ function App(props) {
           </div>
         </div>
 
+        <div className='Weather__data'>
+          {/* <p className='weather-data-info2'>{weather.weather[0].description}</p> */}
+          <p className='weather-data-info2'>Humidity: {weather.main.humidity}%</p>
+          <p className='weather-data-info2'>Wind speed: {weather.wind.speed}m/s</p>
+        </div>
+
         <div className='Weather__suntime-container'>
           <div className='Weather__suntime'>
             <img className='image-sun' src={sunrise} alt=''/>
-            <p className='weather-data-info2'>{weather.sys.sunrise.toLocaleTimeString()}</p>
+            <p className='weather-data-info3'>{weather.sys.sunrise.toLocaleTimeString()}</p>
           </div>
           <div className='Weather__suntime'>
             <img className='image-sun' src={sunset} alt=''/>
-            <p className='weather-data-info2'>{weather.sys.sunset.toLocaleTimeString()}</p>
+            <p className='weather-data-info3'>{weather.sys.sunset.toLocaleTimeString()}</p>
           </div>
         </div>
-
-        {/* <p className='weather-data-info'>Wind speed: {weather.wind.speed} m/s</p> */}
-        
-        {/* <p className='weather-data-info'>feels like {weather.main.feels_like}ºC</p>
-        <p>{weather.weather[0].main}</p> */}
 
       </div> }
 

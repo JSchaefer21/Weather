@@ -12,7 +12,7 @@ function App() {
 
   const [weather, setWeather] = useState(null)
   const [altitude, setAltitude] = useState(null)
-  const [map, setMap] = useState(true)
+  const [map, setMap] = useState(false)
 
   useEffect(() => {
     handleLocation()
