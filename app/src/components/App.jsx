@@ -57,7 +57,7 @@ function App() {
       <header>
         <form className='Header__form' onSubmit={handleFormSubmit}>
           <input className='Header__form-input' type="text" name="city" placeholder="City"/>
-          <button className='Header__button'>Search</button>
+          <button className='material-symbols-outlined Header__button'>Search</button>
         </form>
 
         <button className='Header__button Header__location' onClick={handleLocation}>Set Location</button>
