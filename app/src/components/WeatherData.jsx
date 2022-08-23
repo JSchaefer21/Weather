@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import '../styles/Weather.sass'
 import sunset from '../sunset.png'
 import sunrise from '../sunrise.png'
+import wind from '../wind.png'
 
 
 function App(props) {
@@ -15,7 +16,7 @@ function App(props) {
   return (
     <div className='Weather'>
       
-      {weather &&  <div className='Weather__container'>
+      {weather && <div className='Weather__container'>
         <p className='weather-day'>{weather.sys.sunrise.toLocaleDateString()}</p>
         <div className='Weather__header'>
           <p className='weather-name'>{weather.name}</p>
@@ -32,8 +33,20 @@ function App(props) {
 
         <div className='Weather__data'>
           {/* <p className='weather-data-info2'>{weather.weather[0].description}</p> */}
-          <p className='weather-data-info2'>Humidity: {weather.main.humidity}%</p>
-          <p className='weather-data-info2'>Wind speed: {weather.wind.speed}m/s</p>
+          <div className='Weather__suntime'>
+            <p className='weather-data-info2'>Humidity:</p>
+            <p className='weather-data-info3'>{weather.main.humidity}%</p>
+          </div>
+          <div className='Weather__suntime'>
+            <p className='weather-data-info2'>Pressure:</p>
+            <p className='weather-data-info3'>{weather.main.pressure} hPa</p>
+          </div>
+          <div className='Weather__suntime'>
+            <p className='weather-data-info2'>Wind speed: </p>
+            <p className='weather-data-info3'>{weather.wind.speed} m/s</p>
+            <p/>
+            <img style={{rotate: `${weather.wind.deg}deg` }} className='image-wind' src={wind} alt=''/>
+          </div>
         </div>
 
         <div className='Weather__suntime-container'>
