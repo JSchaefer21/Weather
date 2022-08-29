@@ -1,3 +1,5 @@
+@use 'base'
+
 .Box
     position: absolute
     z-index: 1
@@ -29,18 +31,23 @@
     -webkit-appearance: none
     margin: 0
     padding: 0
-    padding: 3px 8px
+    padding: 4px
     border: none
     border-radius: 3px
-    font-size: 16px
-    font-weight: 400
-    background-color: #5e7e8f
-    color: white
+    font-size: 18px
+    font-weight: 500
+    background-color: #608f97
+    color: base.$almost-white
+    cursor: pointer
 
 input
     -webkit-appearance: none  
+    outline: none
     margin: 0
     padding: 0px 5px
-    width: 140px
+    width: 120px
     border: none
-    border-radius: 2px
+    border-radius: 3px
+    background-color: #d4e0e2
+    color: #1f1f20
+    font-weight: 500

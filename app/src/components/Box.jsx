@@ -16,7 +16,7 @@ function Box(props) {
 
         <form className='Box__form' onSubmit={handleFormSubmit}>
           <input type="text" name="city" placeholder="City"/>
-          <button className='Box__button'>Search</button>
+          <button className='material-symbols-outlined Box__button'>Search</button>
         </form>
       </main>
 
