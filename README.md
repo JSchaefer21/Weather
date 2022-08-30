@@ -1,4 +1,4 @@
-# weather
+# Weather
 ### Weather Web-aplication
 
 Web application that gives you the weather at that specific time from anywhere in the world.
